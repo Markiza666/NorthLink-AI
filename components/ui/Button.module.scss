@@ -1,0 +1,38 @@
+.button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-radius: var(--radius-md);
+    font-family: var(--font-main);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: none;
+    width: 100%;
+
+    &.primary {
+        background-color: var(--accent);
+        color: white;
+        &:hover { background-color: var(--accent-hover); }
+    }
+
+    &.ghost {
+        background: transparent;
+        color: var(--text-muted);
+        &:hover {
+            background-color: var(--bg-nav-hover);
+            color: var(--text-on-dark);
+        }
+    }
+
+    &.danger {
+        background: transparent;
+        color: var(--text-muted);
+        &:hover {
+            background-color: var(--bg-danger-hover);
+            color: var(--danger);
+        }
+    }
+
+    .label { font-weight: 500; }
+}
