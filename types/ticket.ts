@@ -9,9 +9,9 @@ export interface ITicket {
     description: string;
     status: Status;
     priority: Priority;
-    aiSummarry?: string;
+    aiSummary?: string;
     aiSentiment?: string;
-    criator: Types.ObjectId;
+    creator: Types.ObjectId;
     createdAt: Date;
     updatedAt: Date;
 }

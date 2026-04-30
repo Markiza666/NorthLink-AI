@@ -17,14 +17,15 @@ const TicketSchema = new Schema<ITicketDocument> (
             enum: ['low', 'medium', 'high', 'critical'],
             default: 'medium'
         },
-        aiSummarry: { type: String },
+        aiSummary: { type: String },
         aiSentiment: { type: String },
-        criator: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+        creator: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     },
     { timestamps: true }
 );
 
 const Ticket: Model<ITicketDocument> =
     mongoose.models.Ticket || mongoose.model<ITicketDocument>('Ticket', TicketSchema);
+    TicketSchema.index({ createdAt: -1 });
 
 export default Ticket;
