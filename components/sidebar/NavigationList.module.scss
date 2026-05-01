@@ -15,7 +15,6 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-        // padding: 0.75rem 1rem;
         color: var(--text-muted);
         text-decoration: none;
         border-radius: var(--radius-md);
@@ -40,6 +39,26 @@
         .label {
             font-weight: 500;
             font-size: 0.95rem;
+        }
+
+        &.active {
+            background-color: var(--bg-nav-hover);
+            color: var(--accent);
+
+            .icon {
+                color: var(--accent);
+            }
+
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                left: -1rem;
+                height: 60%;
+                width: 4px;
+                background-color: var(--accent);
+                border-radius: 0 4px 4px 0;
+            }
         }
     }
 }
