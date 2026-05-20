@@ -1,12 +1,28 @@
 "use client";
 
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import Button from '@/components/ui/Button';
 import styles from './settings.module.scss';
 import { User, Globe, Moon, Save, Trash2 } from 'lucide-react';
 
 export default function SettingsPage() {
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        const handle = requestAnimationFrame(() => {
+            setMounted(true);
+        });
+        return () => cancelAnimationFrame(handle);
+    }, []);
+
     const handleSave = () => alert("Settings saved!");
     const handleDeleteData = () => alert("This would erase the data...");
+
+    if (!mounted) {
+        return <div className={styles.container}>Loading settings...</div>;
+    }
 
     return (
         <div className={styles.container}>
@@ -51,13 +67,13 @@ export default function SettingsPage() {
                     <div className={styles.settingRow}>
                         <div className={styles.withIcon}>
                             <Moon size={16} />
-                            <span>Dark mode</span>
+                            <span>{theme === 'dark' ? 'Dark Mode On' : 'Light Mode On'}</span>
                         </div>
                         <Button 
-                            label="Change theme" 
+                            label={theme === 'dark' ? 'Switch to Light' : 'Switch to Dark'} 
                             variant="ghost" 
                             className={styles.compactBtn}
-                            onClick={() => console.log("Toggle dark mode")} 
+                            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                         />
                     </div>
                 </div>

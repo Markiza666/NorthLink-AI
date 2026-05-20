@@ -1,7 +1,27 @@
 .footer {
+    // Using a thin border with the sidebar's specific border color
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 1rem;
     margin-top: auto;
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+
+    .themeBtn {
+        // Ensuring the ghost button is visible against the dark sidebar
+        color: var(--text-on-dark) !important;
+        
+        &:hover {
+            background-color: var(--bg-nav-hover) !important;
+        }
+    }
+
+    .skeleton {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+    }
 }
