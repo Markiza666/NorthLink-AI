@@ -1,11 +1,12 @@
+import Link from 'next/link';
 import styles from './SidebarHeader.module.scss';
 
 const SidebarHeader = () => {
     return (
-        <div className={styles.header}>
+        <Link href="/" className={styles.header}>
             <div className={styles.logo}>NL</div>
             <h2 className={styles.title}>NorthLink AI</h2>
-        </div>
+        </Link>
     );
 };
 

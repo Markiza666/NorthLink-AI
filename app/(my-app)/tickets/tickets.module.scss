@@ -5,7 +5,7 @@
 
     h1 {
         margin-bottom: 2rem;
-        color: var(--bg-sidebar);
+        color: var(--text-main); // Changes automatically with theme
         font-weight: 700;
     }
 
@@ -15,10 +15,10 @@
         gap: 1.5rem;
 
         .card {
-            background: white;
+            background: var(--bg-card); // Changes automatically with theme
             border-radius: var(--radius-md);
             padding: 1.5rem;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border-color, #e2e8f0); // Changes automatically with theme
             display: flex;
             flex-direction: column;
             transition: transform var(--transition-fast), box-shadow var(--transition-fast);
@@ -42,7 +42,8 @@
             }
 
             .aiBox {
-                background: #f0f9ff;
+                /* We use a transparent background with a colored border to create a subtle highlight effect that works well in both light and dark themes */
+                background: rgba(167, 229, 255, 0.08); 
                 border-left: 4px solid var(--accent);
                 padding: 1rem;
                 margin-bottom: 1.25rem;
@@ -51,7 +52,7 @@
                 strong {
                     display: block;
                     margin-bottom: .25rem;
-                    color: var(--accent-hover);
+                    color: var(--accent);
                     font-size: 0.85rem;
                     text-transform: uppercase;
                     letter-spacing: 0.05em;
@@ -60,9 +61,11 @@
                 p {
                     margin: 0;
                     font-size: .95rem;
-                    color: #334155;
+                    color: var(--text-main);    // Changes automatically with theme
                     font-style: italic;
+                    opacity: 0.9;
                 }
+                
                 .footer {
                     display: flex;
                     justify-content: space-between;

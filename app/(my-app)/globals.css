@@ -3,12 +3,14 @@
 :root {
     /* Color */
     --bg-main: #f1f5f9;
+    --bg-card: #ffffff;
     --bg-sidebar: #0f172a;
     --bg-nav-hover: rgba(255, 255, 255, 0.05);
     --bg-danger-hover: rgba(239, 68, 68, 0.1);
     --text-main: #1e293b;
     --text-muted: #94a3b8;
     --text-on-dark: #f8fafc;
+    --border-color: #e2e8f0;
     
     --accent: #38bdf8;
     --accent-hover: #0ea5e9;
@@ -20,6 +22,15 @@
     --transition-fast: 0.2s ease;
 }
 
+[data-theme='dark'] {
+  --bg-main: #020617;
+  --bg-card: #1a2849;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #1e293b;
+  --accent: #60a5fa;
+  --danger: #f87171;
+}
 body {
     background-color: var(--bg-main);
     color: var(--text-main);

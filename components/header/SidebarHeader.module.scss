@@ -10,16 +10,17 @@
     }
 
     .logo {
-        background: linear-gradient(135deg, #38bdf8, #1d4ed8);
-        color: white;
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
+        background-color: var(--accent); // Den blå färgen du valde
+        color: white; // Texten inuti cirkeln
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: 800;
         border-radius: 8px;
-        font-size: 0.8rem;
+        font-weight: 800;
+        font-size: 1.25rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
     .title {
